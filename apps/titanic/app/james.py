@@ -1,11 +1,15 @@
-from walter import Walter
+from fastapi import FastAPI
+
+from .walter import Walter
+
+app = FastAPI(title="Titanic (James)")
 
 
-class James :
+class James:
     def __init__(self):
-        pass
+        pass 
 
-if __name__ == "__main__":
-    print("제임스가 메인이다.")
-    w = Walter()
-    w.get_data()
+    def get_data(self):
+        w = Walter()
+        return w.get_data()
+        
