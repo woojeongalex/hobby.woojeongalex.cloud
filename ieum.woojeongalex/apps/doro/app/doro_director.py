@@ -1,15 +1,15 @@
 from fastapi import FastAPI
 
-from .walter import Walter
+from doro.app.doro_reader import DoroReader
 
-app = FastAPI(title="Titanic (James)")
+app = FastAPI(title="DoroDirector")
 
 
-class James:
+class DoroDirector:
     def __init__(self):
         pass 
 
     def get_data(self):
-        w = Walter()
+        w = DoroReader()
         return w.get_data()
         
