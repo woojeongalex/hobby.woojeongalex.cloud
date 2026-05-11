@@ -7,7 +7,7 @@ _DATA_DIR = Path(__file__).resolve().parent
 _CSV_PATH = _DATA_DIR / "Titanic-Dataset.csv"
 
 
-class Walter:
+class WalterReader:
     def __init__(self):
         pass
 
