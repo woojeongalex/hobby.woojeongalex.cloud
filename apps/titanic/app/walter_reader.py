@@ -27,3 +27,6 @@ class WalterReader:
     def get_dead_count(self):
         df = pd.read_csv(_CSV_PATH)
         return int((df["Survived"] == 0).sum())
+
+    def get_full_data(self):
+        return pd.read_csv(_CSV_PATH)

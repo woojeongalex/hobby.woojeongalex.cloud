@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from fastapi.encoders import jsonable_encoder
+from fastapi.responses import JSONResponse
 
 from titanic.app.james_controller import JamesController
 from doro.app.doro_director import DoroDirector
@@ -44,8 +46,9 @@ def read_titanic_tree():
 
 @app.get("/titanic/model")
 def read_titanic_model():
-    james = JamesController()
-    return {"model_name": jack.get_training_model_name()}
+    controller = JamesController()
+    model_name = controller.get_model_name_and_accuracy()
+    return JSONResponse(content=jsonable_encoder(model_name))
 
 
 @app.get("/doro/data")
